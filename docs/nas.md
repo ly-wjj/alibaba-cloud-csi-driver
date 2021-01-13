@@ -29,7 +29,18 @@ Same as diskplugin.csi.alibabacloud.com;
 
 ### Step 1: Create CSI Plugin
 ```
-# kubectl create -f ./deploy/nas/nas-plugin.yaml
+## you shoud deploy rabc.yaml
+kubectl -f ./deploy/rabc.yaml
+
+## two ways
+## one, install dedicated
+kubectl create -f ./deploy/nas/nas-plugin-dedicated.yaml
+kubectl create -f ./deploy/nas/nas-provisioner-deticated.yaml
+
+## two, install manager
+kubectl create -f ./deploy/nas/nas-plugin-manager.yaml
+kubectl create -f ./deploy/nas/nas-provisioner-manager.yaml
+
 ```
 
 > Note: The plugin log style can be configured by environment variable: LOG_TYPE.
